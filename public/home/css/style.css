@@ -103,7 +103,7 @@ a {
         margin-right: 20px; }
 
 .hero {
-  background: #f4f5f4;
+  background: #053a31;
   padding: calc(4rem - 30px) 0 0rem 0; }
   @media (min-width: 768px) {
     .hero {
@@ -125,7 +125,7 @@ a {
       .hero h1 {
         font-size: 54px; } }
   .hero p {
-    color: rgba(255, 255, 255, 0.5);
+    color: rgb(255, 255, 255);
     margin-bottom: 30px; }
   .hero .hero-img-wrap {
     position: relative; }
