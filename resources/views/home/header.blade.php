@@ -1,6 +1,10 @@
 <nav class="custom-navbar navbar navbar-expand-md navbar-light bg-white shadow navbar-static-top" aria-label="Fine Wood navigation bar">
     <div class="container">
-        <a class="navbar-brand" href="index.html  ">Fine Wood<span>.</span></a>
+        <!-- Replace this part with your logo image -->
+        <a class="navbar-brand" href="index.html">
+            <img src="images\fine_wood.png" alt="Fine Wood Logo" width="50" height="50">
+
+        </a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni" aria-controls="navbarsFurni" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>

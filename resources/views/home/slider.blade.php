@@ -1,16 +1,19 @@
 <div class="hero">
     <div class="container">
-        <div class="row justify-content-between">
-            <div class="col-lg-5">
-                <div class="intro-excerpt">
-                    <h1>Welcome to <span class="d-block">Fine Wood Furniture</span></h1>
-                    <p class="mb-4">Discover exquisite furniture that transforms your living space. Elevate your home with our handcrafted designs. Quality and style, redefined.</p>
-                    <p><a href="" class="btn btn-secondary me-2">Shop Now</a><a href="#" class="btn btn-white-outline">Explore</a></p>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="hero-content">
+                    <h1>Welcome to <span class="highlight-text">Fine Wood Furniture</span></h1>
+                    <p class="hero-description">Elevate your living space with our exquisite handcrafted furniture. Redefine quality and style.</p>
+                    <div class="hero-buttons">
+                        <a href="#" class="btn btn-primary">Shop Now</a>
+                        <a href="#" class="btn btn-secondary">Explore</a>
+                    </div>
                 </div>
             </div>
-            <div class="col-lg-7">
-                <div class="hero-img-wrap">
-                    <img src="images/couch.png" class="img-fluid">
+            <div class="col-lg-6">
+                <div class="hero-image">
+                    <img src="images/product-1.png" alt="Fine Wood Furniture" class="img-fluid">
                 </div>
             </div>
         </div>

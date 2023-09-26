@@ -144,7 +144,7 @@
 
         <div class="row g-5 mb-5">
             <div class="col-lg-4">
-                <div class="mb-4 footer-logo-wrap"><a href="#" class="footer-logo">Fine<span>Wood</span></a></div>
+                <img src="images\fine_wood.png" alt="Fine Wood Logo" width="75" height="75">
                 <p class="mb-4">Explore a world of beautiful and functional furniture for your home. FineWood offers high-quality pieces to transform your living spaces.</p>
 
                 <ul class="list-unstyled custom-social">
@@ -198,7 +198,7 @@
         <div class="border-top copyright">
             <div class="row pt-4">
                 <div class="col-lg-6">
-                    <p class="mb-2 text-center text-lg-start">Copyright &copy;<script>document.write(new Date().getFullYear());</script>. All Rights Reserved. &mdash; Designed with love by <a href="https://yourwebsite.com">Your Name</a> Distributed By <a href="https://themewagon.com">ThemeWagon</a>  <!-- License information: https://yourwebsite.com/license/ -->
+                    <p class="mb-2 text-center text-lg-start">Copyright &copy;<script>document.write(new Date().getFullYear());</script>. All Rights Reserved. &mdash; Designed with love by <a href="https://yourwebsite.com">David Ansa</a> Distributed By <a href="https://themewagon.com">David Ansa</a>  <!-- License information: https://yourwebsite.com/license/ -->
                     </p>
                 </div>
 

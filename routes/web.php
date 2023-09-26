@@ -27,3 +27,4 @@ Route::middleware([
 });
 
 route::get('/redirect', [HomeController::class,'redirect']);
+
