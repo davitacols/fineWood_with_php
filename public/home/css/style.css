@@ -812,10 +812,12 @@ a:hover {
     font-weight: 500;
     text-decoration: none;
     color:
+  }
   
 
-.untree_co-section {
-  padding: 7rem 0; }
+  .untree_co-section {
+  padding: 7rem 0;
+  }
 
   .form-control {
     height: 50px;
