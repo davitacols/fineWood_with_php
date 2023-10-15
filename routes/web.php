@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AdminController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,17 +15,13 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-route::get('/', [HomeController::class,'index']);
+Route::get('/', [HomeController::class, 'index']);
 
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified'
-])->group(function () {
+Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
 });
 
-route::get('/redirect', [HomeController::class,'redirect']);
-
+Route::get('/redirect', [HomeController::class, 'redirect']);
+Route::get('/view_category', [AdminController::class, 'view_category']);
