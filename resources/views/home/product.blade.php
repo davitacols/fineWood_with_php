@@ -17,7 +17,7 @@
             <img src="images/cross.svg" class="img-fluid">
           </span>
 
-          <a href="cart.html" class="btn btn-primary">Add to Cart</a>
+          <a href="admin\public\cart.html" class="btn btn-primary">Add to Cart</a>
         </div>
       </div>
       <div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
