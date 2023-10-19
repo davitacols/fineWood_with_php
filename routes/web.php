@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ShopController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +17,7 @@ use App\Http\Controllers\AdminController;
 */
 
 Route::get('/', [HomeController::class, 'index']);
+Route::get('shop', [ShopController::class, 'shop']);
 
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/dashboard', function () {
@@ -23,5 +25,9 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     })->name('dashboard');
 });
 
+
 Route::get('/redirect', [HomeController::class, 'redirect']);
 Route::get('/view_category', [AdminController::class, 'view_category']);
+
+Route::get('/shop', 'ShopController@shop')->name('shop');
+

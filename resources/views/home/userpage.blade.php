@@ -140,7 +140,7 @@
                         </div>
                         <div class="col-auto">
                             <button class="btn btn-primary">
-                                <span class="fa fa-paper-plane"></span>
+                                <span class="fa fa-paper-plane" aria-placeholder="submit "></span>
                             </button>
                         </div>
                     </form>

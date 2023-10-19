@@ -32,6 +32,102 @@
   }
 }
 
+/* Reduce the button sizes in the header */
+.custom-navbar .custom-navbar-cta li a,
+.custom-navbar .custom-navbar-nav li a {
+  font-size: 14px; /* Adjust the font size */
+  padding: 10px 20px; /* Adjust the padding (top/bottom, left/right) */
+}
+
+/* Button size adjustments */
+.custom-navbar .custom-navbar-cta li a,
+.custom-navbar .custom-navbar-nav .user-avatar {
+  font-size: 14px; /* Adjust the font size */
+  padding: 8px 16px; /* Adjust the padding (top/bottom, left/right) */
+}
+
+.dropdown-content a {
+  font-size: 14px; /* Adjust the font size */
+  padding: 8px 16px; /* Adjust the padding (top/bottom, left/right) */
+}
+
+/* CSS for Pinterest-like Header */
+.custom-navbar {
+  background-color: #fff;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+  padding: 15px 0;
+}
+
+.custom-navbar .navbar-brand img {
+  border-radius: 15%;
+}
+
+.custom-navbar .form-control {
+  border: 1px solid #ccc;
+  border-radius: 50px;
+  padding: 8px 15px;
+  font-size: 14px; /* Adjust the font size */
+  justify-content: left;
+  align-items: flex-end;
+
+}
+
+.custom-navbar .btn-outline-success {
+  border-radius: 20px;
+  padding: 8px 15px; /* Adjust the padding */
+  font-size: 14px; /* Adjust the font size */
+}
+
+.custom-navbar .nav-item {
+  margin: 0 10px;
+}
+
+.custom-navbar .btn-primary {
+  border-radius: 20px;
+  padding: 8px 15px; /* Adjust the padding */
+  font-size: 14px; /* Adjust the font size */
+}
+
+.custom-navbar .dropdown-toggle::after {
+  display: none;
+}
+
+.custom-navbar .dropdown-menu {
+  border-radius: 10px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.custom-search-input {
+  width: 600px; /* You can adjust the width as per your preference */
+}
+
+
+.custom-navbar .dropdown-item {
+  border-radius: 10px;
+  transition: 0.3s;
+  font-size: 14px; /* Adjust the font size */
+  padding: 8px 15px; /* Adjust the padding */
+}
+
+.custom-navbar .dropdown-item:hover {
+  background-color: #f1f1f1;
+}
+
+
+/* If you want to reduce the size of the avatar as well */
+.user-avatar {
+  font-size: 18px; /* Adjust the font size */
+  width: 30px; /* Adjust the width */
+  height: 30px; /* Adjust the height */
+}
+
+/* If you want to reduce the dropdown menu item sizes */
+.dropdown-content a {
+  font-size: 14px; /* Adjust the font size */
+  padding: 8px 16px; /* Adjust the padding (top/bottom, left/right) */
+}
+
+
 /* Use a larger font size for the body text */
 body {
   font-size: 16px;
@@ -47,6 +143,12 @@ a {
   color: #f9bf29;
   background-color: --bs-blue
 }
+
+.custom-navbar-nav {
+  justify-content: left;
+  align-items: flex-end;
+}
+
 
 a:hover {
   color: #ffffff;
@@ -95,10 +197,8 @@ a:hover {
   margin-right: 30px;
 }
 
-/* Add this CSS in your styles.css or custom CSS file */
-.small-btn {
-  font-size: 14px;
-  padding: 5px 10px;
+.custom-search-input {
+  width: 300%;
 }
 
 
@@ -276,77 +376,106 @@ a:hover {
 .section-title {
   color: #2f2f2f; }
 
-.product-section {
-  padding: 7rem 0; }
+  .product-section {
+    padding: 7rem 0;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
   .product-section .product-item {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 1rem 2rem;
     text-align: center;
     text-decoration: none;
     display: block;
     position: relative;
-    padding-bottom: 50px;
-    cursor: pointer; }
-    .product-section .product-item .product-thumbnail {
-      margin-bottom: 30px;
-      position: relative;
-      top: 0;
-      -webkit-transition: .3s all ease;
-      -o-transition: .3s all ease;
-      transition: .3s all ease; }
-    .product-section .product-item h3 {
-      font-weight: 600;
-      font-size: 16px; }
-    .product-section .product-item strong {
-      font-weight: 800 !important;
-      font-size: 18px !important; }
-    .product-section .product-item h3, .product-section .product-item strong {
-      color: #2f2f2f;
-      text-decoration: none; }
-    .product-section .product-item .icon-cross {
-      position: absolute;
-      width: 35px;
-      height: 35px;
-      display: inline-block;
-      background: #2f2f2f;
-      bottom: 15px;
-      left: 50%;
-      -webkit-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
-      transform: translateX(-50%);
-      margin-bottom: -17.5px;
-      border-radius: 50%;
-      opacity: 0;
-      visibility: hidden;
-      -webkit-transition: .3s all ease;
-      -o-transition: .3s all ease;
-      transition: .3s all ease; }
-      .product-section .product-item .icon-cross img {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        -webkit-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%); }
-    .product-section .product-item:before {
-      bottom: 0;
-      left: 0;
-      right: 0;
-      position: absolute;
-      content: "";
-      background: #dce5e4;
-      height: 0%;
-      z-index: -1;
-      border-radius: 10px;
-      -webkit-transition: .3s all ease;
-      -o-transition: .3s all ease;
-      transition: .3s all ease; }
-    .product-section .product-item:hover .product-thumbnail {
-      top: -25px; }
-    .product-section .product-item:hover .icon-cross {
-      bottom: 0;
-      opacity: 1;
-      visibility: visible; }
-    .product-section .product-item:hover:before {
-      height: 70%; }
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .product-section .product-item .product-thumbnail {
+    margin-bottom: 30px;
+    position: relative;
+    top: 0;
+    transition: all 0.3s ease;
+  }
+  
+  .product-section .product-item h3 {
+    font-weight: 600;
+    font-size: 16px;
+  }
+  
+  .product-section .product-item strong {
+    font-weight: 800 !important;
+    font-size: 18px !important;
+  }
+  
+  .product-section .product-item h3, .product-section .product-item strong {
+    color: #2f2f2f;
+    text-decoration: none;
+  }
+  
+  .product-section .product-item .icon-cross {
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    display: inline-block;
+    background: #2f2f2f;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: -17.5px;
+    border-radius: 50%;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+  
+  .product-section .product-item .icon-cross img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .product-section .product-item:before {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    content: "";
+    background: #dce5e4;
+    height: 0%;
+    z-index: -1;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+  }
+  
+  .product-section .product-item:hover .product-thumbnail {
+    top: -25px;
+  }
+  
+  .product-section .product-item:hover .icon-cross {
+    bottom: 0;
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .product-section .product-item:hover:before {
+    height: 70%;
+  }
+  .product-card img {
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .product-card img {
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+    
 
 .why-choose-section {
   padding: 7rem 0; }
