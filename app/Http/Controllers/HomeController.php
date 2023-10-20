@@ -31,4 +31,20 @@ class HomeController extends Controller
             return redirect()->route('login'); // Redirect to the login page, for example.
         }
     }
+
+    public function shop()
+    {
+        $products = product::all();
+        return view('home.shop', compact('products'));
+    }
+
+    public function cart()
+    {
+        return view('home.cart');
+    }
+
+    public function home()
+    {
+        return view('home.userpage');
+    }
 }

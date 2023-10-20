@@ -1,60 +1,106 @@
 <!-- /*
 * Bootstrap 5
-* Template Name: Furni
-* Template Author: Untree.co
-* Template URI: https://untree.co/
+* Template Name: FineWood
+* Template Author: David Ansa
+* Template URI: github.com/davitacols
 * License: https://creativecommons.org/licenses/by/3.0/
 */ -->
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="author" content="Untree.co">
-  <link rel="shortcut icon" href="favicon.png">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Your Name">
+    <link rel="shortcut icon" href="favicon.png">
 
-  <meta name="description" content="" />
-  <meta name="keywords" content="bootstrap, bootstrap4" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="bootstrap, bootstrap5" />
 
-		<!-- Bootstrap CSS -->
-		<link href="css/bootstrap.min.css" rel="stylesheet">
-		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-		<link href="css/tiny-slider.css" rel="stylesheet">
-		<link href="css/style.css" rel="stylesheet">
-		<title>Furni Free Bootstrap 5 Template for Furniture and Interior Design Websites by Untree.co </title>
-	</head>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap JavaScript and dependencies (Popper.js and jQuery) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+    <!-- Bootstrap CSS -->
+    <link href="home/css/bootstrap.min.css" rel="stylesheet">
+    <link href="home/https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="home/css/tiny-slider.css" rel="stylesheet">
+    <link href="home/css/style.css" rel="stylesheet">
+    <title>FineWood - Your Furniture Destination</title>
+</head>
 
 	<body>
 
 		<!-- Start Header/Navigation -->
-		<nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="Furni navigation bar">
-
+		<nav class="custom-navbar navbar navbar-expand-md navbar-light bg-white shadow navbar-static-top" aria-label="Fine Wood navigation bar">
 			<div class="container">
-				<a class="navbar-brand" href="index.html">Furni<span>.</span></a>
+				<a class="navbar-brand" href="{{ route('userblade') }}">
+				<img src="{{ asset('images/fine_wood.png') }}" alt="Fine Wood Logo" width="50" height="50">
+				</a>
 
-				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni" aria-controls="navbarsFurni" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
 				</button>
 
-				<div class="collapse navbar-collapse" id="navbarsFurni">
-					<ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
-						<li class="nav-item ">
-							<a class="nav-link" href="index.html">Home</a>
-						</li>
-						<li class="active"><a class="nav-link" href="shop.html">Shop</a></li>
-						<li><a class="nav-link" href="about.html">About us</a></li>
-						<li><a class="nav-link" href="services.html">Services</a></li>
-						<li><a class="nav-link" href="blog.html">Blog</a></li>
-						<li><a class="nav-link" href="contact.html">Contact us</a></li>
-					</ul>
+				<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="custom-navbar-nav navbar-nav me-auto mb-2 mb-md-0">
+					<li class="nav-item">
+					<a class="nav-link" href="{{ url('index.html') }}">Home</a>
+					</li>
+					<li class="nav-item">
+					<a class="nav-link" href="{{ route('shop') }}">Shop</a>
+					</li>
+					<li class="nav-item">
+					<a class="nav-link" href="{{ url('about.html') }}">About us</a>
+					</li>
+					<li class="nav-item">
+					<a class="nav-link" href="{{ url('services.html') }}">Services</a>
+					</li>
+				</ul>
 
-					<ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
-						<li><a class="nav-link" href="#"><img src="images/user.svg"></a></li>
-						<li><a class="nav-link" href="cart.html"><img src="images/cart.svg"></a></li>
-					</ul>
+				<form class="d-flex mx-3">
+					<div class="input-group">
+					<input class="form-control me-2 custom-search-input" type="search" placeholder="Search" aria-label="Find Item">
+					<button class="btn btn-outline-success custom-search-button" type="submit">
+						<i class="fas fa-search"></i>
+					</button>
+					</div>
+				</form>
+
+				@if (Route::has('login'))
+					<div class="d-flex">
+					@auth
+						<div class="dropdown">
+						<button class="btn btn-primary dropdown-toggle" type="button" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+							{{ Auth::user()->name }}
+						</button>
+						<ul class="dropdown-menu" aria-labelledby="userDropdown">
+							<li>
+							<a class="dropdown-item" href="{{ url('/home') }}">Settings</a>
+							</li>
+							<li>
+							<form method="POST" action="{{ route('logout') }}">
+								@csrf
+								<button type="submit" class="dropdown-item">
+								<i class="fas fa-sign-out-alt"></i> Logout
+								</button>
+							</form>
+							</li>
+						</ul>
+						</div>
+					@else
+						<a href="{{ route('login') }}" class="btn btn-primary mx-2">Log in</a>
+
+						@if (Route::has('register'))
+						<a href="{{ route('register') }}" class="btn btn-primary">Register</a>
+						@endif
+					@endauth
+					</div>
+				@endif
 				</div>
 			</div>
-				
 		</nav>
 		<!-- End Header/Navigation -->
 
@@ -77,126 +123,53 @@
 
 		
 
-		<div class="untree_co-section product-section before-footer-section">
-		    <div class="container">
-		      	<div class="row">
+		<!-- Start Product Section -->
+		<div class="product-section">
+			<div class="container">
+				<div class="row">
+				<div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
+					<div class="product-item">
+					<img src="images/product-1.png" class="img-fluid product-thumbnail">
+					<h3 class="product-title">Nordic Chair</h3>
+					<strong class="product-price">$50.00</strong>
 
-		      		<!-- Start Column 1 -->
-					<div class="col-12 col-md-4 col-lg-3 mb-5">
-						<a class="product-item" href="#">
-							<img src="images/product-3.png" class="img-fluid product-thumbnail">
-							<h3 class="product-title">Nordic Chair</h3>
-							<strong class="product-price">$50.00</strong>
+					<span class="icon-cross">
+						<img src="images/cross.svg" class="img-fluid">
+					</span>
 
-							<span class="icon-cross">
-								<img src="images/cross.svg" class="img-fluid">
-							</span>
-						</a>
-					</div> 
-					<!-- End Column 1 -->
-						
-					<!-- Start Column 2 -->
-					<div class="col-12 col-md-4 col-lg-3 mb-5">
-						<a class="product-item" href="#">
-							<img src="images/product-1.png" class="img-fluid product-thumbnail">
-							<h3 class="product-title">Nordic Chair</h3>
-							<strong class="product-price">$50.00</strong>
-
-							<span class="icon-cross">
-								<img src="images/cross.svg" class="img-fluid">
-							</span>
-						</a>
-					</div> 
-					<!-- End Column 2 -->
-
-					<!-- Start Column 3 -->
-					<div class="col-12 col-md-4 col-lg-3 mb-5">
-						<a class="product-item" href="#">
-							<img src="images/product-2.png" class="img-fluid product-thumbnail">
-							<h3 class="product-title">Kruzo Aero Chair</h3>
-							<strong class="product-price">$78.00</strong>
-
-							<span class="icon-cross">
-								<img src="images/cross.svg" class="img-fluid">
-							</span>
-						</a>
+					<a href="{{ route('cart') }}" class="btn btn-primary">Add to Cart</a>
 					</div>
-					<!-- End Column 3 -->
+				</div>
+				<div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
+					<div class="product-item">
+					<img src="images/product-2.png" class="img-fluid product-thumbnail">
+					<h3 class="product-title">Kruzo Aero Chair</h3>
+					<strong class="product-price">$78.00</strong>
 
-					<!-- Start Column 4 -->
-					<div class="col-12 col-md-4 col-lg-3 mb-5">
-						<a class="product-item" href="#">
-							<img src="images/product-3.png" class="img-fluid product-thumbnail">
-							<h3 class="product-title">Ergonomic Chair</h3>
-							<strong class="product-price">$43.00</strong>
+					<span class="icon-cross">
+						<img src="images/cross.svg" class="img-fluid">
+					</span>
 
-							<span class="icon-cross">
-								<img src="images/cross.svg" class="img-fluid">
-							</span>
-						</a>
+					<a href="{{ route('cart') }}" class="btn btn-primary">Add to Cart</a>
 					</div>
-					<!-- End Column 4 -->
+				</div>
+				<div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
+					<div class="product-item">
+					<img src="images/product-3.png" class="img-fluid product-thumbnail">
+					<h3 class="product-title">Ergonomic Chair</h3>
+					<strong class="product-price">$43.00</strong>
 
+					<span class="icon-cross">
+						<img src="images/cross.svg" class="img-fluid">
+					</span>
 
-					<!-- Start Column 1 -->
-					<div class="col-12 col-md-4 col-lg-3 mb-5">
-						<a class="product-item" href="#">
-							<img src="images/product-3.png" class="img-fluid product-thumbnail">
-							<h3 class="product-title">Nordic Chair</h3>
-							<strong class="product-price">$50.00</strong>
-
-							<span class="icon-cross">
-								<img src="images/cross.svg" class="img-fluid">
-							</span>
-						</a>
-					</div> 
-					<!-- End Column 1 -->
-						
-					<!-- Start Column 2 -->
-					<div class="col-12 col-md-4 col-lg-3 mb-5">
-						<a class="product-item" href="#">
-							<img src="images/product-1.png" class="img-fluid product-thumbnail">
-							<h3 class="product-title">Nordic Chair</h3>
-							<strong class="product-price">$50.00</strong>
-
-							<span class="icon-cross">
-								<img src="images/cross.svg" class="img-fluid">
-							</span>
-						</a>
-					</div> 
-					<!-- End Column 2 -->
-
-					<!-- Start Column 3 -->
-					<div class="col-12 col-md-4 col-lg-3 mb-5">
-						<a class="product-item" href="#">
-							<img src="images/product-2.png" class="img-fluid product-thumbnail">
-							<h3 class="product-title">Kruzo Aero Chair</h3>
-							<strong class="product-price">$78.00</strong>
-
-							<span class="icon-cross">
-								<img src="images/cross.svg" class="img-fluid">
-							</span>
-						</a>
+					<a href="{{ route('cart') }}" class="btn btn-primary">Add to Cart</a>
 					</div>
-					<!-- End Column 3 -->
-
-					<!-- Start Column 4 -->
-					<div class="col-12 col-md-4 col-lg-3 mb-5">
-						<a class="product-item" href="#">
-							<img src="images/product-3.png" class="img-fluid product-thumbnail">
-							<h3 class="product-title">Ergonomic Chair</h3>
-							<strong class="product-price">$43.00</strong>
-
-							<span class="icon-cross">
-								<img src="images/cross.svg" class="img-fluid">
-							</span>
-						</a>
-					</div>
-					<!-- End Column 4 -->
-
-		      	</div>
-		    </div>
+				</div>
+				</div>
+			</div>
 		</div>
+
 
 
 		<!-- Start Footer Section -->
@@ -287,7 +260,7 @@
 					<div class="row pt-4">
 						<div class="col-lg-6">
 							<p class="mb-2 text-center text-lg-start">Copyright &copy;<script>document.write(new Date().getFullYear());</script>. All Rights Reserved. &mdash; Designed with love by <a href="https://untree.co">Untree.co</a>  Distributed By <a href="https://themewagon.com">ThemeWagon</a> <!-- License information: https://untree.co/license/ -->
-            </p>
+            				</p>
 						</div>
 
 						<div class="col-lg-6 text-center text-lg-end">
