@@ -36,7 +36,7 @@
 		<!-- Start Header/Navigation -->
 		<nav class="custom-navbar navbar navbar-expand-md navbar-light bg-white shadow navbar-static-top" aria-label="Fine Wood navigation bar">
 			<div class="container">
-				<a class="navbar-brand" href="{{ route('userblade') }}">
+				<a class="navbar-brand" href="{{ route('userpage') }}">
 				<img src="{{ asset('images/fine_wood.png') }}" alt="Fine Wood Logo" width="50" height="50">
 				</a>
 

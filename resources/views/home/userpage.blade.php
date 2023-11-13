@@ -223,6 +223,43 @@
 </footer>
 <!-- End Footer Section -->
 
+<script>
+    function searchProducts() {
+        var searchQuery = document.getElementById("searchInput").value;
+        // You can perform client-side validation here if needed
+        
+        // Send the search query to the server-side script (PHP in this case)
+        fetch('search.php', {
+            method: 'POST',
+            body: JSON.stringify({ query: searchQuery }),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Handle the search results returned from the server
+            displaySearchResults(data);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    }
+
+    function displaySearchResults(results) {
+        var searchResultsDiv = document.getElementById("searchResults");
+        // Clear previous search results
+        searchResultsDiv.innerHTML = "";
+
+        // Display the new search results
+        results.forEach(function(product) {
+            var productDiv = document.createElement("div");
+            productDiv.textContent = product.name; // Assuming your product object has a 'name' property
+            searchResultsDiv.appendChild(productDiv);
+        });
+    }
+</script> 
+
 <script src="js/bootstrap.bundle.min.js"></script>
 <script src="js/tiny-slider.js"></script>
 <script src="js/custom.js"></script>

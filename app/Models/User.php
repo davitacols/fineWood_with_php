@@ -61,3 +61,7 @@ class User extends Authenticatable
         'profile_photo_url',
     ];
 }
+
+// Path: davidson/app/Models/Category.php
+
+

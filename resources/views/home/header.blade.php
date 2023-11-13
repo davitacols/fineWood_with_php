@@ -1,6 +1,6 @@
 <nav class="custom-navbar navbar navbar-expand-md navbar-light bg-white shadow navbar-static-top" aria-label="Fine Wood navigation bar">
   <div class="container">
-    <a class="navbar-brand" href="{{ route('userblade') }}">
+    <a class="navbar-brand" href="{{ route('userpage') }}">
       <img src="{{ asset('images/fine_wood.png') }}" alt="Fine Wood Logo" width="50" height="50">
     </a>
 
@@ -11,7 +11,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="custom-navbar-nav navbar-nav me-auto mb-2 mb-md-0">
         <li class="nav-item">
-          <a class="nav-link" href="{{ route('userblade') }}">Home</a>
+          <a class="nav-link" href="{{ route('userpage') }}">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{{ route('shop') }}">Shop</a>

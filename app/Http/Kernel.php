@@ -4,6 +4,31 @@ namespace App\Http;
 
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
+use Illuminate\Foundation\Http\FormRequest;
+
+class YourFormRequest extends FormRequest{
+    public function authorize(){
+        return true;
+    }
+
+    public function rules(){
+        return [
+            'product_name' => 'required',
+            'product_price' => 'required',
+            'category' => 'required',
+            'shipping_type' => 'required',
+            'date_created' => 'required',
+            'created_at' => 'required',
+            'updated_at' => 'required',
+            'id' => 'required',
+            'inventory' => 'required',
+            'sku' => 'required',
+            'main_image' => 'required',
+            'other_images' => 'required',
+        ];
+    }
+}
+
 class Kernel extends HttpKernel
 {
     /**

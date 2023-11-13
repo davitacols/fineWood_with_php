@@ -32,6 +32,12 @@ class HomeController extends Controller
         }
     }
 
+    public function userpage()
+    {
+        $products = product::all();
+        return view('home.userpage', compact('products'));
+    }
+
     public function shop()
     {
         $products = product::all();
@@ -46,5 +52,10 @@ class HomeController extends Controller
     public function home()
     {
         return view('home.userpage');
+    }
+
+    public function checkout()
+    {
+        return view('home.checkout');
     }
 }
